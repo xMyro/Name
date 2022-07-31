@@ -1,0 +1,128 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key", IntroEnabled = true, HidePremium = true, SaveConfig = false, Icon = "rbxassetid://10431030575"})
+
+OrionLib:MakeNotification({
+	Name = "Logged In Succecfully!",
+	Content = "You have logged in as "..Player.Name..".",
+	Image = "rbxassetid://10431030575",
+	Time = 5
+})
+
+
+_G.Key = "key.TkA9SgU89VFagdevTDatevacYvdavd9iv2s"
+_G.KeyInput = "string"
+_G.Key = "key.VgId82Vedg7dbM7vfs56bdVDSddvTEvdtCDk"
+_G.KeyInput = "string"
+_G.Key = "key.Hd378vbdT3VDt3vvcnKetsvRE4B6dcvd3bxd"
+_G.KeyInput = "string"
+_G.Key = "key.Ge67vd63Bvd37SV73vS73vcnV83mdo72vf56"
+_G.KeyInput = "string"
+_G.Key = "key.KtyebI9137xv53CV634bcs7va6v4ca66Bdva5"
+_G.KeyInput = "string"
+_G.Key = "key.7xv76v36VCXF553vBme98dfb7Nme48sb6dv4i"
+_G.KeyInput = "string"
+_G.Key = "key.DIjm37dNyu3f5xvC3ydv6v3vD5nMCvmd656b3"
+_G.KeyInput = "string"
+_G.Key = "key.Jyeb672BVA69cdv6v3c5vdcn6bv3cs4c32x5x"
+_G.KeyInput = "string"
+_G.Key = "key.DfdbeuybTY348CX46VD6v467vcfmw67b4cd56"
+_G.KeyInput = "string"
+_G.Key = "key.Knf7B36XVvc6C5cv53Ni48Ln478cbvC43br7v"
+_G.KeyInput = "string"
+_G.Key = "key.Yver67bc5v3vx45vcVDF54vcx5cvvAFh4i5cv"
+_G.KeyInput = "string"
+
+
+function MakeScriptHub()
+    local Window = OrionLib:MakeWindow({Name = "Myro Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "MyroConfig", IntroEnabled = true, IntroText = "Myro Hub", IntroIcon = "rbxassetid://10431030575", Icon = "rbxassetid://10431030575"})
+
+
+
+    -- Tabs
+    
+    local MainTab = Window:MakeTab({
+        Name = "Main",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = true
+    })
+    
+    
+    
+    -- Buttons
+    
+    MainTab:AddButton({
+        Name = "Hoopz Aimbot",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zackyport/whitelist/main/white"))()
+          end    
+    })
+    
+    MainTab:AddButton({
+        Name = "Ouro Hub",
+        Callback = function()
+            getgenv().wl_key = "redeem.TViVg2UmtvrMPeiP-WrLOhxba-FEwBdX0rYtEQVHhe"
+            loadstring(game:HttpGet("https://ourohub.com/api/script/loader.lua?Key="..getgenv().wl_key))()
+          end    
+    })
+    
+    MainTab:AddButton({
+        Name = "Football Fusion Mags ( Might Not Work )",
+        Callback = function()
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/SlimLegoHacks/Scripts/main/FootballFusion.lua')))()
+          end    
+    })
+
+end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "You have Entered A Valid Key",
+        Image = "rbxassetid://10431030575",
+        Time = 5
+    })
+end
+
+
+function IncorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Incorrect Key!",
+        Content = "You have Entered A Unvalid Key",
+        Image = "rbxassetid://10431030575",
+        Time = 5
+    })
+end
+
+
+
+
+local MainTab = Window:MakeTab({
+	Name = "Key Verification",
+	Icon = "rbxassetid://10431030575",
+	PremiumOnly = false
+})
+
+
+MainTab:AddTextbox({
+	Name = "Enter Key",
+	Default = "Input",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+MainTab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+            MakeScriptHub()
+            else
+                IncorrectKeyNotification()
+            end
+  	end    
+})
+
+
+OrionLib:Init()
